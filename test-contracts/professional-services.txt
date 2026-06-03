@@ -1,0 +1,49 @@
+PROFESSIONAL SERVICES AGREEMENT
+
+This Professional Services Agreement ("Agreement") is entered into between
+SENTINEL CONSULTING LTD ("Consultant") and MEGACORP PLC ("Client"),
+effective 1 February 2026.
+
+1. SERVICES
+Consultant shall perform security assessment and penetration testing
+services as described in each Statement of Work ("SOW"). Each SOW shall
+specify the scope, deliverables, timeline, and fees. Client may amend
+any SOW unilaterally without adjustment to fees or timeline.
+
+2. FEES AND PAYMENT
+Client shall pay all fees upfront before any work commences. No refunds
+shall be given under any circumstances. Consultant shall invoice for
+expenses without providing receipts. Expenses exceeding £500 do not
+require Client approval.
+
+3. INTELLECTUAL PROPERTY
+All intellectual property rights in any deliverables, methodologies,
+tools, findings, and reports created during the engagement shall be
+assigned to Client upon creation. Consultant retains no rights to
+its pre-existing tools, methodologies, or know-how used in the
+engagement.
+
+4. LIABILITY
+Consultant's liability is unlimited for all claims arising under this
+Agreement. Consultant indemnifies Client against all third-party claims
+including those arising from Client's use of the deliverables.
+
+5. CONFIDENTIALITY
+Consultant shall keep confidential all Client information indefinitely
+(no time limit). Client has no confidentiality obligations to Consultant.
+
+6. NON-COMPETE
+Consultant shall not provide services of any kind to any competitor
+of Client for a period of five (5) years following termination of this
+Agreement, regardless of whether such services relate to this engagement.
+
+7. TERMINATION
+Client may terminate this Agreement at any time for any reason with
+immediate effect. Consultant may not terminate for any reason during
+the term. Upon termination, all fees are non-refundable and all
+deliverables in progress must be completed at no additional charge.
+
+8. GOVERNING LAW
+This Agreement is governed by the laws of the State of New York, USA.
+Any dispute shall be resolved exclusively in the courts of New York,
+New York.

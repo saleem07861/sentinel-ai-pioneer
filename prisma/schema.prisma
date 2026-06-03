@@ -1,0 +1,421 @@
+// Sentinel AI — Prisma Schema
+// Phase 1: Data model only. No UI, API routes, or AI adapters yet.
+//
+// Design principles:
+//   - Light-first, human-approved organisational intelligence.
+//   - Every AI analysis is an immutable, separate record (never overwritten).
+//   - Human decisions and audit logs are append-only (never deleted/edited).
+//   - The system never acts on AI output without a HumanDecision record.
+//   - Architecture is multi-module (Legal first; Sales/Finance/HR/etc. later).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  // Prisma 7: connection URL lives in prisma.config.ts (migrations) and is
+  // supplied to PrismaClient via a driver adapter at runtime (see lib/prisma.ts).
+}
+
+// ---------------------------------------------------------------------------
+// ENUMS
+// ---------------------------------------------------------------------------
+
+enum ModuleType {
+  LEGAL
+  SALES
+  FINANCE
+  HR
+  COMPLIANCE
+  SECURITY
+  OPERATIONS
+}
+
+enum ModuleStatus {
+  ACTIVE
+  PLANNED
+  DISABLED
+}
+
+enum RiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum ApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  ESCALATED
+}
+
+enum AuditAction {
+  CREATED
+  UPDATED
+  DELETED
+  REVIEWED
+  APPROVED
+  REJECTED
+  AI_ANALYSED
+  EXPORTED
+}
+
+enum DocumentStatus {
+  UPLOADED
+  UNDER_REVIEW
+  REVIEWED
+  APPROVED
+  REJECTED
+  ARCHIVED
+}
+
+enum ClauseStatus {
+  STANDARD
+  DEVIATION
+  MISSING
+  ACCEPTABLE
+  FLAGGED
+}
+
+enum AIProvider {
+  DEEPSEEK
+  OPENAI
+  AZURE_OPENAI
+  LOCAL
+  MOCK
+}
+
+enum DecisionOutcome {
+  ACCEPTED
+  REJECTED
+  NEGOTIATED
+  ESCALATED
+  DEFERRED
+}
+
+enum ReviewStatus {
+  PENDING
+  ACCEPTED
+  EDITED
+  FLAGGED
+}
+
+// ---------------------------------------------------------------------------
+// MODELS
+// ---------------------------------------------------------------------------
+
+model Organisation {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String?
+  isActive    Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  settings         OrganisationSettings?
+  modules          Module[]
+  templates        Template[]
+  documents        Document[]
+  clauses          Clause[]
+  aiAnalyses       AIAnalysis[]
+  humanDecisions   HumanDecision[]
+  knowledgeEntries     KnowledgeEntry[]
+  knowledgeBaseClauses KnowledgeBaseClause[]
+  people               Person[]
+  auditLogs        AuditLog[]
+}
+
+model OrganisationSettings {
+  id             String @id @default(cuid())
+  organisationId String @unique
+
+  defaultAIProvider    AIProvider @default(DEEPSEEK)
+  requireHumanApproval Boolean    @default(true)
+  auditLoggingEnabled  Boolean    @default(true)
+  timezone             String?
+
+  // API keys stored at org level (not .env) so admins can edit them via UI.
+  // These take precedence over environment variables when set.
+  deepseekApiKey String?
+  openaiApiKey   String?
+  localAiUrl     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  organisation Organisation @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+}
+
+model Module {
+  id             String @id @default(cuid())
+  organisationId String
+
+  type        ModuleType
+  status      ModuleStatus @default(PLANNED)
+  name        String
+  description String?
+  isActive    Boolean      @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  organisation     Organisation     @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  templates            Template[]
+  documents            Document[]
+  knowledgeEntries     KnowledgeEntry[]
+  knowledgeBaseClauses KnowledgeBaseClause[]
+
+  @@index([organisationId])
+  @@index([organisationId, type])
+}
+
+model Template {
+  id             String  @id @default(cuid())
+  organisationId String
+  moduleId       String?
+
+  name        String
+  description String?
+  version     String?
+  content     String  @db.Text
+  isActive    Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  organisation Organisation @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  module       Module?      @relation(fields: [moduleId], references: [id], onDelete: SetNull)
+  documents    Document[]
+
+  @@index([organisationId])
+  @@index([moduleId])
+}
+
+model Document {
+  id             String  @id @default(cuid())
+  organisationId String
+  moduleId       String
+  uploadedById   String?
+
+  title       String
+  description String?
+  fileUrl     String?
+  fileType    String?
+  fileSize    Int?
+  status      DocumentStatus @default(UPLOADED)
+  riskLevel   RiskLevel?
+  templateId  String?
+  isActive    Boolean        @default(true)
+
+  // Per-clause review workflow + version tracking + metadata
+  metadata          Json?
+  version           Int     @default(1)
+  previousVersionId String? @unique
+  approvedContent   String? @db.Text
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  organisation     Organisation @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  module           Module       @relation(fields: [moduleId], references: [id], onDelete: Restrict)
+  uploadedBy       Person?      @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  template         Template?    @relation(fields: [templateId], references: [id], onDelete: SetNull)
+  previousVersion  Document?    @relation("DocumentVersions", fields: [previousVersionId], references: [id], onDelete: SetNull)
+  nextVersion      Document?    @relation("DocumentVersions")
+
+  clauses    Clause[]
+  aiAnalyses AIAnalysis[]
+
+  @@index([organisationId])
+  @@index([moduleId])
+  @@index([status])
+  @@index([riskLevel])
+  @@index([uploadedById])
+  @@index([templateId])
+  @@index([previousVersionId])
+  @@index([organisationId, status])
+  @@index([organisationId, riskLevel])
+}
+
+model Clause {
+  id             String @id @default(cuid())
+  organisationId String
+  documentId     String
+
+  title          String
+  content        String       @db.Text
+  templateClause String?      @db.Text
+  status         ClauseStatus @default(STANDARD)
+  riskLevel      RiskLevel?
+  riskNote       String?      @db.Text
+  orderIndex     Int
+
+  // Per-clause human review
+  editedContent String?      @db.Text
+  reviewStatus  ReviewStatus @default(PENDING)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  organisation Organisation @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  document     Document     @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  aiAnalyses   AIAnalysis[]
+
+  @@index([organisationId])
+  @@index([documentId])
+  @@index([status])
+  @@index([riskLevel])
+  @@index([reviewStatus])
+}
+
+model AIAnalysis {
+  id             String  @id @default(cuid())
+  organisationId String
+  documentId     String?
+  clauseId       String?
+
+  provider          AIProvider
+  promptVersion     String?
+  runId             String?    @unique
+  confidence        Float?
+  findings          String     @db.Text
+  suggestedResponse String?    @db.Text
+  riskLevel         RiskLevel?
+  tokensUsed        Int?
+  durationMs        Int?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  organisation   Organisation    @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  document       Document?       @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  clause         Clause?         @relation(fields: [clauseId], references: [id], onDelete: Cascade)
+  humanDecisions HumanDecision[]
+
+  @@index([organisationId])
+  @@index([documentId])
+  @@index([clauseId])
+  @@index([riskLevel])
+}
+
+model HumanDecision {
+  id             String  @id @default(cuid())
+  organisationId String
+  analysisId     String
+  decidedById    String?
+
+  outcome   DecisionOutcome
+  notes     String?         @db.Text
+  decidedAt DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  organisation     Organisation     @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  analysis         AIAnalysis       @relation(fields: [analysisId], references: [id], onDelete: Restrict)
+  decidedBy        Person?          @relation(fields: [decidedById], references: [id], onDelete: SetNull)
+  knowledgeEntries KnowledgeEntry[]
+
+  @@index([organisationId])
+  @@index([analysisId])
+  @@index([decidedById])
+  @@index([organisationId, outcome])
+}
+
+model KnowledgeEntry {
+  id             String  @id @default(cuid())
+  organisationId String
+  moduleId       String?
+
+  title            String
+  summary          String   @db.Text
+  sourceDecisionId String?
+  tags             String[]
+  isActive         Boolean  @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  organisation   Organisation   @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  module         Module?        @relation(fields: [moduleId], references: [id], onDelete: SetNull)
+  sourceDecision HumanDecision? @relation(fields: [sourceDecisionId], references: [id], onDelete: SetNull)
+
+  @@index([organisationId])
+  @@index([moduleId])
+}
+
+model KnowledgeBaseClause {
+  id             String  @id @default(cuid())
+  organisationId String
+  moduleId       String?
+
+  title          String
+  content        String   @db.Text
+  category       String   // e.g. "Governing Law", "Liability", "Confidentiality"
+  sourceDocument String?  // reference to the original approved contract name
+  tags           String[]
+  isActive       Boolean  @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  organisation Organisation @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  module       Module?      @relation(fields: [moduleId], references: [id], onDelete: SetNull)
+
+  @@index([organisationId])
+  @@index([organisationId, category])
+  @@index([category])
+}
+
+model Person {
+  id             String @id @default(cuid())
+  organisationId String
+
+  firstName String
+  lastName  String
+  email     String
+  jobTitle  String?
+  role      String   @default("associate")
+  password  String?
+  isActive  Boolean  @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  organisation      Organisation    @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  uploadedDocuments Document[]
+  decisions         HumanDecision[]
+  auditLogs         AuditLog[]
+
+  @@unique([organisationId, email])
+  @@index([organisationId])
+}
+
+model AuditLog {
+  id             String  @id @default(cuid())
+  organisationId String
+  actorId        String?
+
+  entityType String
+  entityId   String
+  action     AuditAction
+  metadata   Json?
+  oldValue   Json?
+  newValue   Json?
+
+  createdAt DateTime @default(now())
+
+  organisation Organisation @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  actor        Person?      @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([organisationId])
+  @@index([actorId])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}

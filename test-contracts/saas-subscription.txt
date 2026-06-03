@@ -1,0 +1,41 @@
+SAAS SUBSCRIPTION AGREEMENT
+
+This SaaS Subscription Agreement (the "Agreement") is entered into between
+ACME TECHNOLOGIES LTD ("Provider") and BRIGHTWAVE SOLUTIONS LTD ("Customer"),
+effective as of 1 January 2026.
+
+1. LICENCE GRANT
+Provider grants Customer a non-exclusive, non-transferable, worldwide,
+perpetual right to access and use the Service for any purpose including
+resale, sublicensing, and benchmarking.
+
+2. FEES AND PAYMENT
+Customer shall pay fees annually in arrears within ninety (90) days of
+receipt of invoice. No interest shall accrue on late payments. Provider
+may not suspend access for non-payment.
+
+3. LIABILITY
+Provider's aggregate liability under this Agreement shall not exceed
+the fees paid by Customer in the month preceding the claim. Provider
+limits liability for all claims including death, personal injury, fraud,
+and data protection breaches.
+
+4. DATA PROTECTION
+Provider may process Customer Personal Data for any purpose including
+product improvement, marketing, and sale of aggregated insights to
+third parties. Provider need not notify Customer of data breaches.
+
+5. TERMINATION
+Either party may terminate this Agreement upon ninety (90) days'
+written notice. Upon termination, Provider shall retain Customer Data
+indefinitely for archival purposes.
+
+6. INTELLECTUAL PROPERTY
+Customer assigns all intellectual property rights in the Service to
+Provider upon payment of the first invoice. Provider retains no rights
+in Customer Data.
+
+7. GOVERNING LAW
+This Agreement is governed by the laws of the State of California, USA,
+and the parties submit to the exclusive jurisdiction of the courts of
+San Francisco, California.

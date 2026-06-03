@@ -1,0 +1,31 @@
+MUTUAL NON-DISCLOSURE AGREEMENT (v3.0)
+
+1. CONFIDENTIAL INFORMATION DEFINITION
+   "Confidential Information" means any information disclosed by one party
+   to the other, whether orally or in writing, that is marked as confidential
+   or that a reasonable person would understand to be confidential.
+
+2. CONFIDENTIALITY OBLIGATIONS
+   The Receiving Party shall hold Confidential Information in strict
+   confidence, not disclose it to third parties without consent, limit
+   access to employees with a need to know, and use it solely for the
+   agreed purpose. The Receiving Party may disclose Confidential Information
+   to its professional advisers and auditors who are bound by equivalent
+   duties of confidentiality.
+
+3. EXCLUSIONS
+   Confidential Information excludes publicly available information,
+   independently developed information, and information received from
+   third parties without obligation of confidentiality.
+
+4. TERM AND SURVIVAL
+   This Agreement remains in effect for five (5) years. Confidentiality
+   obligations survive for seven (7) years, or indefinitely for trade secrets.
+
+5. NO LICENCE
+   Nothing grants the Receiving Party any rights in the Disclosing Party's
+   Confidential Information or intellectual property.
+
+6. GOVERNING LAW
+   This Agreement is governed by the laws of England and Wales with
+   exclusive jurisdiction of the courts of England and Wales.

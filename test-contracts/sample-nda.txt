@@ -1,0 +1,36 @@
+MUTUAL NON-DISCLOSURE AGREEMENT
+
+This Mutual Non-Disclosure Agreement ("Agreement") is entered
+into as of the date of last signature below between
+ACME TECHNOLOGIES LTD ("Party A") and BRIGHTWAVE SOLUTIONS LTD ("Party B").
+
+1. CONFIDENTIAL INFORMATION
+Each party may disclose confidential information to the other
+party solely for the purpose of evaluating a potential business
+relationship. Confidential information means any non-public
+information disclosed by either party.
+
+2. OBLIGATIONS
+Each party agrees to: (a) keep confidential information strictly
+confidential; (b) not disclose confidential information to third
+parties without prior written consent; (c) use confidential
+information only for the permitted purpose.
+
+3. TERM
+This Agreement shall remain in effect for a period of two (2) years
+from the date of execution. Either party may terminate this Agreement
+with thirty (30) days written notice.
+
+4. LIABILITY
+Neither party shall be liable for indirect, incidental or
+consequential damages arising from this Agreement. Total liability
+shall not exceed £10,000.
+
+5. GOVERNING LAW
+This Agreement shall be governed by the laws of England and Wales.
+The parties submit to the exclusive jurisdiction of the courts
+of England and Wales.
+
+6. ENTIRE AGREEMENT
+This Agreement constitutes the entire agreement between the parties
+with respect to its subject matter and supersedes all prior agreements.

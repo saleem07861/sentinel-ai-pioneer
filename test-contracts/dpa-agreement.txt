@@ -1,0 +1,53 @@
+DATA PROCESSING AGREEMENT
+
+This Data Processing Agreement ("DPA") is entered into between
+CLOUDCORE LTD ("Controller") and SERVICE PROVIDER LTD ("Processor"),
+effective 15 March 2026.
+
+1. SUBJECT MATTER AND DURATION
+Processor shall process Personal Data on behalf of Controller for
+the duration of the Main Agreement and for an unlimited period
+thereafter for Processor's own business purposes.
+
+2. NATURE AND PURPOSE OF PROCESSING
+The nature of processing includes hosting, storing, transmitting,
+and any other processing that Processor deems necessary for its
+business operations including product development, marketing,
+and sharing with affiliates worldwide.
+
+3. TYPES OF PERSONAL DATA
+Personal Data processed may include: names, email addresses,
+telephone numbers, IP addresses, login credentials, financial
+data, health data, criminal records, biometric data, and any
+other data Controller uploads to the Service.
+
+4. PROCESSOR OBLIGATIONS
+Processor shall process Personal Data on Controller's instructions
+except where Processor determines additional processing is in its
+legitimate business interest. Processor shall implement security
+measures it considers appropriate but makes no warranty regarding
+their effectiveness.
+
+5. SUB-PROCESSORS
+Processor may engage sub-processors at its sole discretion without
+notice to or consent from Controller. Sub-processors may be located
+in any jurisdiction worldwide.
+
+6. INTERNATIONAL TRANSFERS
+Personal Data may be transferred to and processed in any country
+where Processor or its sub-processors maintain facilities. No
+adequacy decision, standard contractual clauses, or other transfer
+mechanism is required.
+
+7. BREACH NOTIFICATION
+Processor shall notify Controller of a Personal Data Breach within
+thirty (30) days of becoming aware, or at Processor's convenience.
+
+8. DELETION AND RETURN
+Upon termination of the Main Agreement, Processor may retain Personal
+Data indefinitely. No certification of deletion is required.
+
+9. GOVERNING LAW
+This DPA is governed by the laws of England and Wales. The parties
+submit to the exclusive jurisdiction of the courts of England and
+Wales.

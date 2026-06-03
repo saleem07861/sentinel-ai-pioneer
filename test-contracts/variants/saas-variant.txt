@@ -1,0 +1,31 @@
+STANDARD SAAS AGREEMENT (v2.1)
+
+1. LIABILITY
+   Each party's aggregate liability arising out of or related to this
+   Agreement shall not exceed one (1) times the total fees paid or payable
+   by the Customer in the twelve (12) months preceding the claim.
+
+2. DATA PROCESSING
+   The Provider shall process Customer Personal Data solely on documented
+   instructions from the Customer and in accordance with applicable data
+   protection law (including UK GDPR). The Provider shall implement
+   appropriate technical and organisational measures to protect such data.
+
+3. TERMINATION
+   Either party may terminate this Agreement for convenience upon ninety (90)
+   days' prior written notice. Either party may terminate immediately for
+   material breach that remains uncured for fifteen (15) days after notice.
+
+4. INTELLECTUAL PROPERTY
+   All intellectual property rights in the Services remain with the Provider.
+   The Customer retains all rights in Customer Data. No assignment of IP is
+   granted except the limited licence expressly set out herein.
+
+5. CONFIDENTIALITY
+   Each party shall keep confidential all Confidential Information of the
+   other party and use it only to perform its obligations under this
+   Agreement. Obligations survive for six (6) years after termination.
+
+6. GOVERNING LAW
+   This Agreement is governed by the laws of England & Wales and the parties
+   submit to the exclusive jurisdiction of the courts of England & Wales.

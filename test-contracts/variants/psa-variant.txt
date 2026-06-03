@@ -1,0 +1,35 @@
+PROFESSIONAL SERVICES AGREEMENT (v1.2)
+
+1. SERVICES
+   Provider shall perform the professional services described in each
+   Statement of Work ("SOW") agreed between the parties. Each SOW shall
+   specify scope, deliverables, timeline, and fees.
+
+2. FEES AND PAYMENT
+   Fees shall be calculated on a time-and-materials basis at the rates
+   set out in the applicable SOW. Invoices payable within forty-five (45)
+   days of receipt. All fees exclusive of VAT.
+
+3. INTELLECTUAL PROPERTY
+   All IP rights in deliverables created specifically for Customer shall
+   vest in Customer upon full payment. Provider retains ownership of its
+   pre-existing tools, methodologies, and know-how.
+
+4. LIMITATION OF LIABILITY
+   Provider's aggregate liability shall not exceed the total fees paid
+   for the specific SOW giving rise to the claim. Standard uncapped
+   carve-outs apply (death, fraud, confidentiality, IP, data protection).
+
+5. INSURANCE
+   Provider shall maintain Professional Indemnity insurance (£1M per claim),
+   Public Liability (£5M per occurrence), and Employer's Liability as
+   required by law.
+
+6. TERMINATION
+   Either party may terminate for convenience upon thirty (30) days'
+   written notice, or immediately for material breach remaining uncured
+   for fifteen (15) days.
+
+7. GOVERNING LAW
+   This Agreement is governed by the laws of England and Wales with
+   exclusive jurisdiction of the courts of England and Wales.

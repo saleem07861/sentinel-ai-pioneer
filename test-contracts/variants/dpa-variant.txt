@@ -1,0 +1,33 @@
+DATA PROCESSING AGREEMENT (v1.0)
+
+1. SUBJECT MATTER AND DURATION
+   This DPA governs the processing of Personal Data by Provider on behalf
+   of Customer for the duration of the Main Agreement and for a period of
+   twelve (12) months thereafter for archival purposes.
+
+2. PROCESSOR OBLIGATIONS
+   Provider shall process Personal Data only on documented instructions
+   from Customer and implement appropriate technical and organisational
+   measures as required by UK GDPR Article 28.
+
+3. SUB-PROCESSORS
+   Customer authorises the sub-processors listed in Annex A. Provider shall
+   notify Customer of changes at least fourteen (14) days in advance with
+   a right to object on reasonable data protection grounds.
+
+4. SECURITY MEASURES
+   Provider shall implement: encryption at rest (AES-256) and in transit
+   (TLS 1.3), access controls with MFA, regular penetration testing, and
+   business continuity plans tested annually.
+
+5. BREACH NOTIFICATION
+   Provider shall notify Customer of a Personal Data Breach without undue
+   delay and within seventy-two (72) hours of becoming aware.
+
+6. DELETION AND RETURN
+   Upon termination, Provider shall delete or return all Personal Data
+   within sixty (60) days and certify such deletion in writing.
+
+7. GOVERNING LAW
+   This DPA is governed by the laws of England and Wales with exclusive
+   jurisdiction of the courts of England and Wales.

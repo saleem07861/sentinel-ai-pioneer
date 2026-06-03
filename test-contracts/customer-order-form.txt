@@ -1,0 +1,46 @@
+CUSTOMER ORDER FORM
+
+This Customer Order Form ("Order") is issued under and governed by the
+Master Services Agreement between ACME TECHNOLOGIES LTD ("Supplier")
+and BRIGHTWAVE SOLUTIONS LTD ("Customer"), effective as of 1 March 2026.
+
+1. PRODUCTS AND SERVICES
+Customer orders 500 licences of "CloudSync Enterprise Edition" at
+£250 per licence per annum. Supplier may substitute alternative
+products of equivalent or lower functionality at its sole discretion
+and continue to charge the full price.
+
+2. PRICING AND PAYMENT
+Total Order Value: £125,000 plus VAT. Payment is due in full within
+7 days of Order date. No payment plan is available. Supplier may
+increase prices mid-term with 30 days' notice and Customer shall pay
+the increased amount without right of set-off or deduction.
+
+3. DELIVERY AND ACCEPTANCE
+Supplier shall deliver within 90 days or such longer period as
+Supplier deems necessary. Customer waives all rights of rejection.
+Services are deemed accepted upon delivery regardless of whether
+they conform to specifications.
+
+4. AUTOMATIC RENEWAL
+This Order shall automatically renew for successive 12-month periods
+at the then-current list price (which may be higher than the price
+stated in Section 2) unless Customer provides written notice of
+non-renewal at least 180 days prior to the renewal date.
+
+5. TERMINATION FOR CONVENIENCE
+Supplier may terminate this Order at any time for any reason upon
+30 days' notice with no refund or credit. Customer may not terminate
+for convenience under any circumstances. Early termination fees equal
+to 100% of remaining contract value shall apply if Customer breaches
+any term.
+
+6. DATA RIGHTS
+Upon termination, Supplier may retain, aggregate, and commercialise
+all Customer Data processed under this Order. Customer waives all
+rights to data portability, extraction, or deletion.
+
+7. GOVERNING LAW
+This Order is governed by the laws of the State of Delaware, USA.
+The parties submit to the exclusive jurisdiction of the courts of
+Wilmington, Delaware.

@@ -1,0 +1,27 @@
+CUSTOMER ORDER FORM (v2.0)
+
+1. PRODUCTS AND SERVICES
+   Customer orders the products and services described in the attached
+   Schedule. Provider shall make the Products available in accordance
+   with the Standard SaaS Agreement incorporated by reference.
+
+2. FEES
+   Fees are set out in the Schedule, exclusive of VAT. Fees are fixed
+   for the Initial Term and may be increased on renewal with sixty (60)
+   days' prior written notice.
+
+3. PAYMENT TERMS
+   Invoices payable within forty-five (45) days. Late payments bear interest
+   at 4% per annum above the Bank of England base rate. Access may be
+   suspended if payment is not received within fifteen (15) days of a
+   written reminder.
+
+4. TERM
+   Initial Term as specified in the Schedule. Auto-renews for successive
+   twelve (12) month periods unless either party gives sixty (60) days'
+   written notice of non-renewal before the end of the current term.
+
+5. INCORPORATION
+   This Order Form incorporates the Standard SaaS Agreement by reference.
+   In the event of conflict, the Order Form prevails to the extent of
+   the conflict.
